@@ -1,0 +1,42 @@
+<!-- dom-basics.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2</title>
+  </head>
+  <body>
+    <h1>Week 2</h1>
+    <section>
+      <h2>Section 1</h2>
+      <p>This is a paragraph</p>
+      <p id="p2">This is a paragraph with an ID</p>
+    </section>
+    <section>
+      <h2>Section 2</h2>
+      <div>
+        <p>This is a paragraph in section 2</p>
+        <p class="green">This is a paragraph with a class</p>
+      </div>
+    </section>
+
+    <!-- Put your JS inside a script block -->
+    <script>
+      const newDiv = document.createElement("div");
+      newDiv.innerHTML = "<ul><li>One</li><li>Two</li><li>Three</li></ul>";
+      document.body.appendChild(newDiv);
+
+      const newSection = document.createElement("section");
+      const newH2 = document.createElement("h2");
+      newH2.innerText = "DOM Basics";
+      newSection.appendChild(newH2);
+
+      const newP = document.createElement("p");
+      newP.innerText = "This was added through Javascript";
+      newSection.appendChild(newP);
+
+      document.body.appendChild(newSection);
+    </script>
+  </body>
+</html>

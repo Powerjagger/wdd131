@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+:root {
+  --primary-color: #52489c;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+  /* used for main content background */
+  --secondary-color: #ffffff;
+}
+
+/* Reset / base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Accessibility: visible focus for keyboard users */
+a:link,
+a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+button:focus,
+a:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Header / nav */
+header {
+  max-width: 640px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 8px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--secondary-font);
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+}
+
+header nav {
+  margin-top: 0.5rem;
+}
+
+/* Menu button */
+header nav button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Nav links list - default styling (we hide via .hide utility) */
+#nav-links {
+  list-style: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-links li a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+/* Utility to hide elements */
+.hide {
+  display: none !important;
+}
+
+/* Layout: main content */
+main {
+  max-width: 640px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+main h2 {
+  font-family: var(--secondary-font);
+  font-size: 1.8em;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  cursor: zoom-in; /* indicates clickable to open viewer */
+}
+
+/* Modal / dialog viewer - hidden by default so it does not block the page unless opened */
+dialog#image-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0,0,0,0.6); /* translucent backdrop */
+  z-index: 9999;
+  justify-content: center;
+  align-items: flex-start; /* we will offset the image with margin-top */
+}
+
+/* Show when dialog is open (native dialog has [open] attribute) */
+dialog#image-viewer[open],
+dialog[open] {
+  display: flex;
+}
+
+/* Inner wrapper so image can be centered and button positioned relative */
+dialog#image-viewer .viewer-inner {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20vh auto 0 auto; /* push down from top on small screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The displayed image */
+dialog#image-viewer img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* limit height so it never overflows vertically */
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Close button */
+button.close-viewer {
+  position: absolute;
+  top: -2.5rem;
+  right: 0.25rem;
+  background: var(--accent-color);
+  color: var(--text-light);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  max-width: 640px;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 8px;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  /* Show nav links horizontally and hide the menu button on large screens */
+  #nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  header nav button {
+    display: none;
+  }
+
+  /* Make the dialog inner content sit a little higher on large screens */
+  dialog#image-viewer .viewer-inner {
+    margin-top: 12vh;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

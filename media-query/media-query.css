@@ -1,0 +1,59 @@
+/* Apply Roboto font to the whole page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* light page background */
+}
+
+/* Header, Main, Footer shared styles */
+header,
+main,
+footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    border: 1px solid #ccc; /* faint border */
+    padding: 1rem;
+    background-color: #cfe2f3; /* bluish background */
+    box-sizing: border-box;
+}
+
+/* Header specific styles */
+header h1 {
+    margin: 0;
+}
+
+/* Main as CSS grid, one column initially */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Section styling */
+section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Footer styling */
+footer p {
+    margin: 0;
+    text-align: center;
+}
+
+/* Media query for viewport width 500px or greater */
+@media screen and (min-width: 500px) {
+    /* Header changes */
+    header {
+        background-color: black;
+        color: white;
+    }
+
+    /* Main layout changes to two columns */
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}

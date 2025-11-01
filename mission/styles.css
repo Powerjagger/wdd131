@@ -1,0 +1,60 @@
+/* Default page styles */
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container max width */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #006EB6;
+  font-size: 20px;
+}
+
+/* Paragraphs */
+p {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Ordered list */
+.does-list {
+  text-align: left;
+  margin: 0 auto 20px auto;
+  padding-left: 40px;
+  max-width: 600px;
+}
+
+/* Logo */
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #333;
+  color: white;
+}
+
+body.dark h2 {
+  color: #4FADE6;
+}

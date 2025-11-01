@@ -1,0 +1,103 @@
+/* ===== GENERAL STYLES ===== */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #473144;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  color: #AF1B3F;
+}
+
+a {
+  color: #AF1B3F;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 3px solid #EFC69B;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Navigation Grid */
+nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: end;
+  justify-items: end;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0;
+  border-top: 2px solid #EFC69B;
+  border-bottom: 2px solid #EFC69B;
+}
+
+nav li a {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ===== MAIN LAYOUT ===== */
+main#articles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ===== ARTICLE GRID ===== */
+article {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.article-details {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.article-content img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== ASIDE ===== */
+.filters {
+  border-left: 2px solid #EFC69B;
+  padding-left: 1rem;
+  margin: 2rem;
+}
+
+.filters h3 {
+  margin-top: 0;
+  color: #AF1B3F;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid #EFC69B;
+  background-color: #f7f7f7;
+}
