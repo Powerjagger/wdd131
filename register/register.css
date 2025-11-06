@@ -1,0 +1,119 @@
+/* register.css */
+
+:root {
+  --accent: #0066cc;
+  --light: #f8f8f8;
+  --border: #ccc;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--accent);
+  padding: 0 .5rem;
+}
+
+label {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #004a99;
+}
+
+.participants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.participants section {
+  background-color: #f2f7ff;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+#addParticipant {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Summary message */
+#summary {
+  text-align: center;
+  background-color: #e6f3ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.hide {
+  display: none;
+}

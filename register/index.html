@@ -1,0 +1,63 @@
+<!-- register/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth Camp Registration</title>
+  <link rel="stylesheet" href="register.css">
+  <script src="register.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>Youth Camp Registration</h1>
+    <form id="registrationForm">
+      <fieldset>
+        <legend>Adult Contact</legend>
+        <label for="adult_name">Adult Name:</label>
+        <input type="text" id="adult_name" name="adult_name" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </fieldset>
+
+      <fieldset class="participants">
+        <legend>Participants</legend>
+
+        <!-- Participant 1 -->
+        <section class="participant1">
+          <h3>Participant 1</h3>
+
+          <label for="fname1">First Name:</label>
+          <input type="text" id="fname1" name="fname1" required>
+
+          <label for="age1">Age:</label>
+          <input type="number" id="age1" name="age1" min="0" required>
+
+          <label for="fee1">Fee ($):</label>
+          <input type="number" id="fee1" name="fee1" value="0" required>
+        </section>
+
+        <button type="button" id="addParticipant">Add Participant</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Camp Info</legend>
+        <label>Camp Type:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="camp_type" value="day" checked> Day Camp</label>
+          <label><input type="radio" name="camp_type" value="overnight"> Overnight Camp</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submitBtn">Submit Registration</button>
+    </form>
+
+    <section id="summary" style="display:none;"></section>
+  </main>
+</body>
+</html>
