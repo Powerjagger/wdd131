@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="recipes.css">
+  <script type="module" src="main.js"></script>
+
+  <meta name="description" content="Discover delicious recipes with our Recipe Book. Browse, search, and enjoy easy-to-make recipes with ratings and descriptions.">
+  <link rel="icon" href="images/recipe-book.png" type="image/png">
+
+  <meta property="og:title" content="Recipe Book">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Discover delicious recipes with our Recipe Book">
+  <meta property="og:image" content="images/recipe-book.png">
+  <meta property="og:url" content="https://yourwebsite.com/index.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="images/recipe-book.png" alt="Recipe Book Logo">
+      <h1>Recipe Book</h1>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="sr-only">Recipe Book Main Content</h1>
+
+    <form class="search-form">
+      <input type="search" name="query" placeholder="Search recipes..." aria-label="Search recipes">
+      <button type="submit">Search</button>
+    </form>
+
+    <section class="recipes">
+      <article class="recipe">
+        <img src="images/apple-crisp.jpg" alt="Apple Crisp with Cinnamon and Oats">
+        <h2>Apple Crisp</h2>
+        <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <p class="description">A warm and crunchy apple crisp made with cinnamon, oats, and brown sugar.</p>
+      </article>
+
+      <article class="recipe">
+        <img src="images/chocolate-chip-cookies.jpg" alt="Classic Chocolate Chip Cookies">
+        <h2>Chocolate Chip Cookies</h2>
+        <span class="rating" role="img" aria-label="Rating: 5 out of 5 stars">
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+        </span>
+        <p class="description">Soft and chewy cookies loaded with chocolate chips for a perfect treat.</p>
+      </article>
+
+      <article class="recipe">
+        <img src="images/chiken-curry.webp" alt="Homemade Chicken Curry">
+        <h2>Chicken Curry</h2>
+        <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star">⭐</span>
+          <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <p class="description">A rich and flavorful chicken curry with spices and creamy sauce.</p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="#"><img src="images/instagram_icon.svg" alt="Instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.svg" alt="YouTube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.svg" alt="Pinterest icon"></a>
+    </div>
+    <p>
+      <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+    </p>
+  </footer>
+
+
+  <!-- Screen reader only styles -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* ----------------------------------------------
+   Import Google Fonts
+----------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* ----------------------------------------------
+   CSS Variables
+----------------------------------------------- */
+:root {
+  --primary-color: #1B98E0;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Amatic SC", cursive;
+}
+
+/* ----------------------------------------------
+   Global Styles
+----------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-dark);
+  background-color: var(--text-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----------------------------------------------
+   Header
+----------------------------------------------- */
+header {
+  padding: 1em;
+  text-align: center;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+
+
+.logo-title img {
+  max-width: 150px;
+  height: auto;
+}
+
+.logo-title h1 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.8em;                     
+  color: #1a4d7a;                        
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 1px;                    
+}
+
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--secondary-color);
+  padding: 1em;
+  background: #fff;
+}
+
+.recipe h2 {
+  color: var(--primary-color);
+  margin: 0.5em 0;
+}
+
+.description {
+  display: none; 
+}
+
+.rating {
+  color: #f5c518; 
+}
+
+
+footer {
+  padding: 1em;
+  text-align: center;
+}
+
+footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+footer .social a img {
+  max-width: none;
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+  transition: transform 0.2s ease-in-out;
+}
+
+footer .social a:hover img {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+/* Medium screens: 2-column layout, show description, larger logo */
+@media (min-width: 600px) {
+  .recipes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .recipe {
+    width: 48%;
+  }
+
+  .description {
+    display: block;
+  }
+
+  .logo-title img {
+    max-width: 200px;
+  }
+
+  .logo-title h1 {
+    font-size: 3em;
+  }
+}
+
+/* Large screens: 3-column layout, max page width, larger logo */
+@media (min-width: 960px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .recipe {
+    width: 31%;
+  }
+
+  .logo-title img {
+    max-width: 250px;
+  }
+
+  .logo-title h1 {
+    font-size: 3.5em;
+  }
+}
