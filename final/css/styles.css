@@ -1,0 +1,281 @@
+/* ==================== Base Styles ==================== */
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;  /* Light mode background */
+  color: #1c1c1c;             /* Light mode text */
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header, footer {
+  background-color: #fff;
+  color: #1c1c1c;
+  text-align: center;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, p, label, a {
+  color: #1c1c1c;
+  transition: color 0.3s;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Main Containers */
+.home-container, .tracker-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Form Section */
+.form-section {
+  background-color: #fff;
+  color: #1c1c1c;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea,
+.form-section button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.form-section button.button {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-section button.button:hover {
+  background-color: #005f99;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.filter-bar input[type="text"] {
+  flex: 1;
+}
+
+.filter-bar button, .filter-bar select {
+  background-color: #007acc;
+  color: #fff;
+  border: 1px solid #007acc;
+  cursor: pointer;
+}
+
+.filter-bar button:hover, .filter-bar select:hover {
+  background-color: #005f99;
+}
+
+/* Warning Text */
+.warning {
+  color: #cc0000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+/* Impulse Cards */
+.impulse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.impulse-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #1c1c1c;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.4s forwards;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.impulse-card h3 {
+  margin-bottom: 10px;
+  color: #1c1c1c;
+}
+
+.delete-btn {
+  background-color: #ff6666;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #ff4444;
+}
+
+/* Button general style */
+.button {
+  background-color: #007acc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #005f99;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Highlight filtered results */
+.filtered {
+  border: 2px solid #1c2b3a;
+  box-shadow: 0 0 12px rgba(28,43,58,0.5);
+}
+
+/* ==================== Dark Mode (FIXED) ==================== */
+
+/* Apply the background/text colors to the root <html> element */
+html.dark-mode {
+    background-color: #1c1c1c;
+    color: #f9f9f9;
+}
+
+/* Ensure body retains the dark background in case of scrolling/viewport issues */
+html.dark-mode body {
+    background-color: #1c1c1c;
+    color: #f9f9f9;
+}
+
+html.dark-mode header,
+html.dark-mode footer {
+    background-color: #2a2a2a;
+    color: #f9f9f9;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode p,
+html.dark-mode label,
+html.dark-mode a {
+    color: #f9f9f9;
+}
+
+html.dark-mode a {
+    color: #aad4ff;
+}
+
+html.dark-mode .impulse-card {
+    background-color: #2e2e2e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    color: #f9f9f9;
+}
+
+html.dark-mode .form-section {
+    background-color: #2a2a2a;
+    color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+html.dark-mode .form-section input,
+html.dark-mode .form-section select,
+html.dark-mode .form-section button {
+    background-color: #3a3a3a;
+    color: #f9f9f9;
+    border: 1px solid #555;
+}
+
+html.dark-mode .form-section button:hover,
+html.dark-mode .filter-bar button:hover,
+html.dark-mode .button:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+html.dark-mode .filter-bar input,
+html.dark-mode .filter-bar select,
+html.dark-mode .filter-bar button {
+    background-color: #444;
+    color: #f9f9f9;
+    border: 1px solid #666;
+}
+
+html.dark-mode .delete-btn {
+    background-color: #ff4c4c;
+}
+
+html.dark-mode .delete-btn:hover {
+    background-color: #ff1f1f;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 600px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

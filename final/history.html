@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impulse History</title>
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.style.backgroundColor = '#1c1c1c';
+    document.documentElement.style.color = '#f9f9f9';
+    document.documentElement.classList.add('dark-mode');
+  }
+</script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Impulse History</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html">Dashboard</a>
+      <a href="history.html">History</a>
+    </nav>
+    <button id="themeToggle" class="button">🌙 Dark Mode</button>
+  </header>
+
+  <main class="tracker-container">
+    <section class="history-summary">
+      <h2>Summary</h2>
+      <p>Total Impulses: <span id="totalImpulses">0</span></p>
+      <p>Highest Intensity: <span id="maxIntensity">0</span></p>
+      <p>Top Category: <span id="topCategory">N/A</span></p>
+    </section>
+
+    <section class="filter-bar">
+      <input type="text" id="historySearch" placeholder="Search impulses...">
+      <button id="clearFilters">Clear</button>
+      <button data-filter="All">All</button>
+      <button data-filter="Food">Food</button>
+      <button data-filter="Shopping">Shopping</button>
+      <button data-filter="Mood">Mood</button>
+      <button data-filter="Other">Other</button>
+      <select id="historySort">
+        <option value="date">Sort by Date</option>
+        <option value="intensity">Sort by Intensity</option>
+        <option value="category">Sort by Category</option>
+      </select>
+    </section>
+
+    <section class="history-section">
+      <h2>All Logged Impulses</h2>
+      <button id="deleteAll" class="button">Delete All</button>
+      <p>Impulses are listed by your selected filters and sort order.</p>
+      <section id="historyList" class="impulse-grid"></section>
+    </section>
+  </main>
+
+  <footer>
+    <a href="tracker.html">Back to Dashboard</a>
+  </footer>
+
+  <script type="module" src="scripts/history.js"></script>
+</body>
+</html>

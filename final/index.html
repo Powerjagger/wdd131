@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daily Impulse Tracker</title>
+
+    <script>
+      const darkMode = localStorage.getItem('theme') === 'dark';
+      if (darkMode) {
+        document.documentElement.classList.add('dark-mode'); // Targets <html>
+      }
+    </script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Daily Impulse Tracker</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html">Dashboard</a>
+      <a href="history.html">History</a>
+    </nav>
+    <button id="themeToggle" class="button">🌙 Dark Mode</button>
+  </header>
+
+  <main class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="https://via.placeholder.com/800x300" alt="Mindful reflection image">
+      <p>
+        Track your daily impulses and gain insight into your habits.  
+        Understanding your impulses can help you build discipline,  
+        recognize triggers, and take better control of your decisions.
+      </p>
+    </section>
+
+    <!-- Today's Stats Section -->
+    <section class="stats">
+      <h2>Today's Overview</h2>
+      <p>Total impulses logged: <span id="totalImpulses">0</span></p>
+      <p>Highest intensity today: <span id="maxIntensity">0</span></p>
+      <p>Most common category: <span id="topCategory">N/A</span></p>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info">
+      <h2>Why Track Your Impulses?</h2>
+      <p>
+        Impulses can reveal emotional patterns. By logging them,  
+        you can identify trends, reduce unhealthy reactions,  
+        and improve your mental resilience.
+      </p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <a href="tracker.html" class="button">Go to Tracker Dashboard</a>
+      <a href="history.html" class="button">View Impulse History</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Impulse Tracker</p>
+  </footer>
+
+  <!-- Main JS -->
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
