@@ -6,7 +6,7 @@
   <title>Daily Impulse Tracker</title>
 
   <!-- Theme JS (runs early) -->
-  <script src="js/theme.js"></script>
+  <script src="js/theme.js" defer></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
@@ -17,7 +17,7 @@
   <header>
     <a href="index.html" class="logo-link">
       <img
-        src="images/impulse.jpeg"
+        src="images/impulse.jpg"
         alt="Daily Impulse Tracker Logo"
         class="site-logo"
         id="siteLogo"
@@ -49,7 +49,7 @@
       </div>
 
       <div class="hero-image">
-        <img src="images/ocean.png" alt="Mindful reflection image">
+        <img src="images/ocean.jpg" alt="Mindful reflection image">
       </div>
     </section>
 
@@ -91,10 +91,6 @@
   </footer>
 
   <!-- Main JS -->
-  <script type="module" src="scripts/main.js"></script>
-  <script>
-    setupThemeToggle();
-  </script>
-
+  <script type="module" src="scripts/main.js" defer></script>
 </body>
 </html>
