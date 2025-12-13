@@ -1,6 +1,35 @@
-/* ==================== Base Styles ==================== */
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Colors */
+  --color-bg-light: #f9f9f9;
+  --color-bg-dark: #1c1c1c;
+  --color-text-light: #1c1c1c;
+  --color-text-dark: #f9f9f9;
+  --color-primary: #007acc;
+  --color-primary-dark: #005f99;
+  --color-accent: #aad4ff;
+  --color-warning: #cc0000;
+  --color-delete: #ff6666;
+  --color-delete-hover: #ff4444;
+  --color-card-bg-light: #fff;
+  --color-card-bg-dark: #2e2e2e;
+  --color-form-bg-light: #fff;
+  --color-form-bg-dark: #2a2a2a;
+  --color-shadow-light: rgba(0,0,0,0.1);
+  --color-shadow-dark: rgba(0,0,0,0.5);
 
-/* General Reset */
+  /* Typography */
+  --font-body: Arial, sans-serif;
+  --font-heading: 'Arial Black', sans-serif;
+
+  /* Spacing */
+  --space-small: 0.5rem;
+  --space-medium: 1rem;
+  --space-large: 2rem;
+  --space-xlarge: 4rem;
+}
+
+/* ==================== Base Styles ==================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,28 +37,19 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;  /* Light mode background */
-  color: #1c1c1c;             /* Light mode text */
+  font-family: var(--font-body);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
   line-height: 1.5;
   transition: background-color 0.3s, color 0.3s;
 }
 
-header, footer {
-  background-color: #fff;
-  color: #1c1c1c;
-  text-align: center;
-  padding: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
 h1, h2, h3, p, label, a {
-  color: #1c1c1c;
   transition: color 0.3s;
 }
 
 a {
-  color: #007acc;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -37,39 +57,109 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Main Containers */
-.home-container, .tracker-container {
+/* ==================== Header & Footer ==================== */
+header, footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-medium);
+  padding: var(--space-medium) var(--space-large);
+  background-color: var(--color-card-bg-light);
+  color: var(--color-text-light);
+  box-shadow: 0 2px 8px var(--color-shadow-light);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 var(--space-medium);
+  font-family: var(--font-heading);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  font-weight: 500;
+}
+
+.site-logo {
+  height: 50px;
+  width: auto;
+  transition: filter 0.3s;
+}
+
+footer {
+  justify-content: center;
+}
+
+/* ==================== Containers ==================== */
+.home-container,
+.tracker-container {
   max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: var(--space-medium);
 }
 
-/* Hero Section */
+/* ==================== Hero Section ==================== */
 .hero {
-  text-align: center;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xlarge);
+  padding: var(--space-xlarge) var(--space-medium);
+  max-width: 1200px;
+  margin: auto;
 }
 
-.hero img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+.hero-content {
+  flex: 1;
 }
 
-/* Form Section */
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-medium);
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--color-shadow-light);
+}
+
+/* ==================== Forms ==================== */
 .form-section {
-  background-color: #fff;
-  color: #1c1c1c;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  background-color: var(--color-form-bg-light);
+  color: var(--color-text-light);
+  padding: var(--space-medium);
+  margin-bottom: var(--space-large);
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px var(--color-shadow-light);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .form-section label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-small);
+  font-weight: bold;
 }
 
 .form-section input,
@@ -77,7 +167,7 @@ a:hover {
 .form-section textarea,
 .form-section button {
   width: 100%;
-  padding: 8px;
+  padding: var(--space-small);
   margin-top: 4px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -85,22 +175,22 @@ a:hover {
 }
 
 .form-section button.button {
-  background-color: #007acc;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 .form-section button.button:hover {
-  background-color: #005f99;
+  background-color: var(--color-primary-dark);
 }
 
-/* Filter Bar */
+/* ==================== Filter Bar ==================== */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 2rem;
+  gap: var(--space-small);
+  margin-bottom: var(--space-large);
   align-items: center;
 }
 
@@ -108,81 +198,88 @@ a:hover {
   flex: 1;
 }
 
-.filter-bar button, .filter-bar select {
-  background-color: #007acc;
+.filter-bar button,
+.filter-bar select {
+  background-color: var(--color-primary);
   color: #fff;
-  border: 1px solid #007acc;
+  border: 1px solid var(--color-primary);
   cursor: pointer;
 }
 
-.filter-bar button:hover, .filter-bar select:hover {
-  background-color: #005f99;
+.filter-bar button:hover,
+.filter-bar select:hover {
+  background-color: var(--color-primary-dark);
 }
 
-/* Warning Text */
+/* ==================== Warning Text ==================== */
 .warning {
-  color: #cc0000;
+  color: var(--color-warning);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-medium);
   transition: color 0.3s;
 }
 
-/* Impulse Cards */
+/* ==================== Impulse Cards ==================== */
 .impulse-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: var(--space-medium);
 }
 
 .impulse-card {
-  background-color: #fff;
+  background-color: var(--color-card-bg-light);
   border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  color: #1c1c1c;
+  padding: var(--space-medium);
+  box-shadow: 0 2px 8px var(--color-shadow-light);
+  color: var(--color-text-light);
   opacity: 0;
   transform: translateY(10px);
   animation: fadeIn 0.4s forwards;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 .impulse-card h3 {
-  margin-bottom: 10px;
-  color: #1c1c1c;
+  margin-bottom: var(--space-small);
 }
 
 .delete-btn {
-  background-color: #ff6666;
+  background-color: var(--color-delete);
   color: #fff;
   border: none;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 0.5rem;
+  margin-top: var(--space-small);
   font-size: 0.85rem;
   transition: background-color 0.2s;
 }
 
 .delete-btn:hover {
-  background-color: #ff4444;
+  background-color: var(--color-delete-hover);
 }
 
-/* Button general style */
+.filtered {
+  border: 2px solid #1c2b3a;
+  box-shadow: 0 0 12px rgba(28,43,58,0.5);
+}
+
+/* ==================== Buttons ==================== */
 .button {
-  background-color: #007acc;
+  background-color: var(--color-primary);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: var(--space-small) var(--space-medium);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .button:hover {
-  background-color: #005f99;
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
 }
 
-/* Fade in animation */
+/* ==================== Animations ==================== */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -190,89 +287,49 @@ a:hover {
   }
 }
 
-/* Highlight filtered results */
-.filtered {
-  border: 2px solid #1c2b3a;
-  box-shadow: 0 0 12px rgba(28,43,58,0.5);
-}
-
-/* ==================== Dark Mode (FIXED) ==================== */
-
-/* Apply the background/text colors to the root <html> element */
+/* ==================== Dark Mode ==================== */
 html.dark-mode {
-    background-color: #1c1c1c;
-    color: #f9f9f9;
+  --color-bg-light: var(--color-bg-dark);
+  --color-text-light: var(--color-text-dark);
+  --color-card-bg-light: var(--color-card-bg-dark);
+  --color-form-bg-light: var(--color-form-bg-dark);
 }
 
-/* Ensure body retains the dark background in case of scrolling/viewport issues */
 html.dark-mode body {
-    background-color: #1c1c1c;
-    color: #f9f9f9;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
 }
 
 html.dark-mode header,
-html.dark-mode footer {
-    background-color: #2a2a2a;
-    color: #f9f9f9;
-}
-
-html.dark-mode h1,
-html.dark-mode h2,
-html.dark-mode h3,
-html.dark-mode p,
-html.dark-mode label,
-html.dark-mode a {
-    color: #f9f9f9;
-}
-
-html.dark-mode a {
-    color: #aad4ff;
-}
-
+html.dark-mode footer,
+html.dark-mode .form-section,
 html.dark-mode .impulse-card {
-    background-color: #2e2e2e;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    color: #f9f9f9;
+  background-color: var(--color-card-bg-light);
+  color: var(--color-text-light);
+  box-shadow: 0 2px 8px var(--color-shadow-dark);
 }
 
-html.dark-mode .form-section {
-    background-color: #2a2a2a;
-    color: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+html.dark-mode a {
+  color: var(--color-accent);
 }
 
-html.dark-mode .form-section input,
-html.dark-mode .form-section select,
-html.dark-mode .form-section button {
-    background-color: #3a3a3a;
-    color: #f9f9f9;
-    border: 1px solid #555;
-}
-
-html.dark-mode .form-section button:hover,
-html.dark-mode .filter-bar button:hover,
-html.dark-mode .button:hover {
-    background-color: #666;
-    color: #fff;
-}
-
-html.dark-mode .filter-bar input,
-html.dark-mode .filter-bar select,
-html.dark-mode .filter-bar button {
-    background-color: #444;
-    color: #f9f9f9;
-    border: 1px solid #666;
-}
-
-html.dark-mode .delete-btn {
-    background-color: #ff4c4c;
-}
-
-html.dark-mode .delete-btn:hover {
-    background-color: #ff1f1f;
+html.dark-mode .site-logo {
+  filter: invert(1) brightness(1.2);
 }
 
 /* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content p,
+  .hero-image img {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .filter-bar {
     flex-direction: column;

@@ -90,15 +90,16 @@ function renderHistory() {
 
 // ----- Theme toggle -----
 if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
+  document.documentElement.classList.add('dark-mode');
   themeToggle.textContent = '☀️ Light Mode';
 } else {
   themeToggle.textContent = '🌙 Dark Mode';
 }
 
 themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  if (document.body.classList.contains('dark-mode')) {
+  document.documentElement.classList.toggle('dark-mode');
+
+  if (document.documentElement.classList.contains('dark-mode')) {
     localStorage.setItem('theme', 'dark');
     themeToggle.textContent = '☀️ Light Mode';
   } else {
@@ -106,6 +107,7 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = '🌙 Dark Mode';
   }
 });
+
 
 // ----- Filter/Search/Sort -----
 filterButtons.forEach(button => {

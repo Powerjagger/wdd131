@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Daily Impulse Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Impulse Tracker</title>
 
-    <script>
-      const darkMode = localStorage.getItem('theme') === 'dark';
-      if (darkMode) {
-        document.documentElement.classList.add('dark-mode'); // Targets <html>
-      }
-    </script>
-    
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Theme JS (runs early) -->
+  <script src="js/theme.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
+    <a href="index.html" class="logo-link">
+      <img
+        src="images/impulse.jpeg"
+        alt="Daily Impulse Tracker Logo"
+        class="site-logo"
+        id="siteLogo"
+      >
+    </a>
+
     <h1>Daily Impulse Tracker</h1>
+
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="tracker.html">Dashboard</a>
       <a href="history.html">History</a>
     </nav>
+
     <button id="themeToggle" class="button">🌙 Dark Mode</button>
   </header>
 
   <main class="home-container">
+
     <!-- Hero Section -->
     <section class="hero">
-      <img src="https://via.placeholder.com/800x300" alt="Mindful reflection image">
-      <p>
-        Track your daily impulses and gain insight into your habits.  
-        Understanding your impulses can help you build discipline,  
-        recognize triggers, and take better control of your decisions.
-      </p>
+      <div class="hero-content">
+        <h2>Take Control of Your Impulses</h2>
+        <p>
+          Track your daily impulses and gain insight into your habits.
+          Understanding your impulses can help you build discipline,
+          recognize triggers, and take better control of your decisions.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/ocean.png" alt="Mindful reflection image">
+      </div>
     </section>
 
     <!-- Today's Stats Section -->
@@ -42,12 +61,18 @@
       <p>Most common category: <span id="topCategory">N/A</span></p>
     </section>
 
+    <!-- Personalized Advice Section -->
+    <section class="advice">
+      <h2>Today's Insight</h2>
+      <ul id="adviceList"></ul>
+    </section>
+
     <!-- Info Section -->
     <section class="info">
       <h2>Why Track Your Impulses?</h2>
       <p>
-        Impulses can reveal emotional patterns. By logging them,  
-        you can identify trends, reduce unhealthy reactions,  
+        Impulses can reveal emotional patterns. By logging them,
+        you can identify trends, reduce unhealthy reactions,
         and improve your mental resilience.
       </p>
     </section>
@@ -57,13 +82,19 @@
       <a href="tracker.html" class="button">Go to Tracker Dashboard</a>
       <a href="history.html" class="button">View Impulse History</a>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Daily Impulse Tracker</p>
+    <p>&copy; 2025 Daily Impulse Tracker. All rights reserved.</p>
   </footer>
 
   <!-- Main JS -->
   <script type="module" src="scripts/main.js"></script>
+  <script>
+    setupThemeToggle();
+  </script>
+
 </body>
 </html>
